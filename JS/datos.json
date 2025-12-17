@@ -1,0 +1,96 @@
+[
+  {
+    "id": 1,
+    "nombre": "Top Sirena Negro",
+    "precio": 32400,
+    "imagen": "./IMG/top_sirena_negro.svg"
+  },
+  {
+    "id": 2,
+    "nombre": "Top Chocolate deportivo",
+    "precio": 46000,
+    "imagen": "./IMG/top_deportivo_chocolate.svg"
+  },
+  {
+    "id": 3,
+    "nombre": "Set x3 Classic",
+    "precio": 30000,
+    "imagen": "./IMG/set_classic.svg"
+  },
+  {
+    "id": 4,
+    "nombre": "Pijama Set Coquette",
+    "precio": 53000,
+    "imagen": "./IMG/pijama_set_coquette.svg"
+  },
+  {
+    "id": 5,
+    "nombre": "Night Black Bombi",
+    "precio": 25000,
+    "imagen": "./IMG/night-black.svg"
+  },
+  {
+    "id": 6,
+    "nombre": "Set x7 Pink",
+    "precio": 60000,
+    "imagen": "./IMG/set-7-pink.svg"
+  },
+  {
+    "id": 7,
+    "nombre": "Catsuit Barbie",
+    "precio": 43700,
+    "imagen": "./IMG/catsuit_barbie.svg"
+  },
+  {
+    "id": 8,
+    "nombre": "Bata Berries",
+    "precio": 32500,
+    "imagen": "./IMG/bata_berries.svg"
+  },
+  {
+    "id": 9,
+    "nombre": "Pijama Set Rojo",
+    "precio": 47800,
+    "imagen": "./IMG/set_rojo.svg"
+  },
+  {
+    "id": 10,
+    "nombre": "Corpiño V Chocolate",
+    "precio": 16890,
+    "imagen": "./IMG/corpino_v_chocolate.svg"
+  },
+  {
+    "id": 11,
+    "nombre": "Pijama Set Breakfast",
+    "precio": 50000,
+    "imagen": "./IMG/pijama_set_breakfast.svg"
+  },
+  {
+    "id": 12,
+    "nombre": "Body basic chocolate",
+    "precio": 25300,
+    "imagen": "./IMG/bodie_choco.svg"
+  },
+
+  {
+    "id": 13,
+    "nombre": "Bata Candy",
+    "precio": 31500,
+    "imagen": "./IMG/bata_candy.svg"
+  },
+
+  {
+    "id": 14,
+    "nombre": "Bikini Set Morado",
+    "precio": 26900,
+    "imagen": "./IMG/bikini_set_morado.svg"
+  },
+
+  {
+    "id": 15,
+    "nombre": "Set x3 Print",
+    "precio": 52000,
+    "imagen": "./IMG/sets-_print.svg"
+  }
+
+]
