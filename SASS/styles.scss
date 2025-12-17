@@ -1,0 +1,607 @@
+@use "utilidades/variables" as *;
+@use "utilidades/mixin" as *;
+
+
+body{
+    padding-top: 64px;
+} 
+
+//************* OVERLAY **********************************//
+#overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: $overlay-bg;
+  z-index: 1000;
+}
+
+#overlay.activo {
+  display: block;
+}
+// *************** NAVBAR *********************************//
+.container-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1200;
+  @include flex-center;
+  background-color: $pink-color;
+  padding: 15px;
+  height: 64px;
+}
+
+.navbar {
+ @include flex-center;
+  width: 100%;
+
+  .btn-carrito{
+    background-color: $pink-color;
+    border: none;
+  }
+}
+
+.logo {
+  @include flex-center;
+  height: 40px;
+  margin: auto;
+
+  img {
+    height: 100%;
+    display: block;
+  }
+}
+
+
+// *************** NUEVA COLECCION *********************************//
+.newCollection {
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  img {
+    width: 100%;
+    display: block;
+  }
+
+  .btn {
+    position: absolute;
+    bottom: 140px;
+    left: 55.5%;
+    transform: translateX(-50%);
+    background-color: $red-color;
+    color: white;
+    font-size: 20px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    height: 50px;
+    width: 300px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: white;
+      color: $red-color;
+      border: 1px solid $red-color;
+    }
+  }
+}
+
+// *************** POP UP SUSCRIPCIÓN *********************************//
+.popup {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: $overlay-bg;
+  z-index: 999;
+
+  .popup-content {
+    position: relative;
+    margin: 5% auto;
+    width: 90%;
+    max-width: 900px;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+
+    #closePopup {
+      position: absolute;
+      top: 15px; right: 20px;
+      font-size: 28px;
+      cursor: pointer;
+      color: black;
+    }
+
+    .popup-layout {
+      display: flex;
+
+      .popup-gallery {
+        flex: 1;
+
+        img {
+          width: 100%;
+          height: auto;
+          object-fit: contain;
+          display: block;
+        }
+      }
+
+      .popup-formulario {
+        flex: 1;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        h2 {
+          color: $red-color;
+          margin-bottom: 20px;
+        }
+
+        form {
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+
+          input[type="email"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+          }
+
+          .btn {
+            background-color: $red-color;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+
+            &:hover {
+              background-color: white;
+              color: $red-color;
+              border: 1px solid $red-color;
+            }
+          }
+
+          .legal {
+            font-size: 12px;
+            color: #666;
+
+            a {
+              color: $red-color;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// *************** ENVIOS *********************************//
+.envios-banner {
+  width: 100%;
+  background-color: $purple-color;
+  overflow: hidden;
+  white-space: nowrap;
+
+  .envios-texto {
+    display: inline-block;
+    animation: deslizar 30s linear infinite;
+
+    span {
+      font-size: 1rem;
+      display: inline-block;
+    }
+  }
+}
+
+@keyframes deslizar {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+// *************** Productos *********************************//
+.portada {
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+  }
+}
+
+.content-section {
+  background-color: $light-pink-color;
+  padding-top: 40px;
+  justify-content: center;
+    
+  .products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    padding: 40px 20px;
+    background-color: $light-pink-color;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    justify-items: center;
+    align-items: start;
+
+    .product-card {
+      background-color: $light-pink-color;
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      width: 100%;
+      max-width: 280px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 4px;
+        margin-bottom: 12px;
+      }
+
+      .product-name {
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 8px;
+        color: $hot-pink-color;
+        text-align: center;
+      }
+
+      .price {
+        color: black;
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+
+      .shop {
+        background-color: $purple-color;
+        color: $hot-pink-color;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 4px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: white;
+          color: $hot-pink-color;
+          border: 1px solid $hot-pink-color;
+        }
+      }
+    }
+  }
+}
+
+// *************** POP UP TALLES *********************************//
+#tallaPopup {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background-color: rgba(0,0,0,0.6);
+  backdrop-filter: blur(4px);
+
+  .popup-content {
+    background: #fff;
+    border-radius: 12px;
+    position: relative;
+    padding: 20px;
+    width: 320px;
+    max-width: 90%;
+    margin: 10% auto;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    animation: fadeIn 0.3s ease;
+    position: relative;
+
+    h2 {
+      font-size: 20px;
+      margin-bottom: 16px;
+      color: #333;
+    }
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 70px;
+      font-size: 24px;
+      cursor: pointer;
+      color: $hot-pink-color;
+
+      &:hover {
+        color: $red-color;
+      }
+    }
+
+    .tallas {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 20px;
+
+      .talla-btn {
+        padding: 10px 18px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        background: #f9f9f9;
+        cursor: pointer;
+        font-weight: bold;
+        transition: all 0.2s ease;
+
+        &:hover {
+          background: $hot-pink-color;
+          color: #fff;
+          border-color: $hot-pink-color;
+        }
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+//carrito
+.carrito-sidebar {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  max-width: none;
+  min-width: 600px;
+  height: 100%;
+  color: $hot-pink-color;
+  background-color: $light-pink-color;
+  border-left: 2px solid $light-pink-color;
+  padding: 20px;
+  overflow-y: auto;
+  z-index: 1100;
+  transition: right 0.3s ease;
+
+  &.activo {
+    right: 0; 
+  }
+}
+
+
+  h2 {
+    font-size: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    margin-bottom: 16px;
+    color: $hot-pink-color;
+    text-align: center;
+  }
+
+  .close {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    font-size: 24px;
+    cursor: pointer;
+    color: $hot-pink-color;
+
+    &:hover {
+      color: $hot-pink-color;
+    }
+  }
+
+#pedido-final {
+
+table {
+  background-color: #fff;
+  width: auto;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 550px;
+}
+
+th {
+  background-color: $hot-pink-color;
+  color: white;
+  padding: 10px;
+}
+
+td {
+  padding: 8px;
+  text-align: center;
+}
+
+.carrito-vacio{
+    color: $hot-pink-color;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.eliminar-item {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: $hot-pink-color;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: scale(1.2);
+    color: black;
+  }
+}
+
+
+}
+
+//checkout
+
+.form-cliente {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: $light-pink-color;
+
+  h3 {
+    margin-bottom: 12px;
+    color: #333;
+  }
+
+  .campo {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+
+    label {
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+
+    input {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+  }
+
+  .btn-confirmar {
+    background: $hot-pink-color;
+    color: #fff;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+
+    &:hover {
+      background: darken($hot-pink-color, 10%);
+    }
+  }
+}
+
+.btn-finalizar{
+    background: $hot-pink-color;
+    color: #fff;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+
+    &:hover {
+      background: darken($hot-pink-color, 10%);
+    }
+  }
+//POPUP GRACIAS
+  .popup-gracias {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: $overlay-bg;
+  z-index: 2000;
+  backdrop-filter: blur(4px);
+}
+
+.popup-gracias-content {
+  background: #fff;
+  border-radius: 12px;
+  padding: 30px;
+  width: 90%;
+  max-width: 400px;
+  margin: 15% auto;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  animation: fadeIn 0.3s ease;
+  position: relative;
+}
+
+.close-gracias {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+  color: $hot-pink-color;
+}
+
+//footer
+
+.footer {
+  background-color: $pink-color;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+  color: #333;
+
+  .container-footer {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .footer-columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+
+    .footer-column {
+      h4 {
+        font-size: 1rem;
+        color: $hot-pink-color;
+        margin-bottom: 10px;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+          margin-bottom: 8px;
+
+          a {
+            text-decoration: none;
+            color: #333;
+            font-size: 0.9rem;
+
+            &:hover {
+              color: $hot-pink-color;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .social-icons {
+    a {
+      margin-right: 10px;
+    }
+
+    img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .footer-bottom {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #666;
+  }
+}

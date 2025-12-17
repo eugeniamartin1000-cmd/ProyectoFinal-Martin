@@ -1,17 +1,206 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seducción Lenceria</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seducción Lencería</title>
 
-    <!-- Links a estilos -->
-    <link rel="stylessheet" href="CSS/main.css">
+  <!-- Styles -->
+  <link rel="stylesheet" href="CSS/main.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
+
+  <div id="overlay"></div>
+
+  <!-- Navbar -->
+  <header class="container-navbar">
+    <nav class="navbar">
+      <div class="logo">
+        <img src="IMG/logo_seduccion.svg" alt="Logo Seducción Lencería">
+      </div>
+      <button id="btnCarrito" class="btn-carrito"> <img src="IMG/carrito.svg" alt="Carrito"></button>
+    </nav>
+
+    <aside id="carritoSidebar" class="carrito-sidebar">
+     <span id="closeCarrito" class="close">&times;</span>
+     <h2>Tu carrito</h2>
+     <div id="pedido-final"></div>
+     <div class="pedido-final" id="pedido-final"></div>
+    </aside>
+  </header>
+
+
+  <!-- Main -->
+  <main>
+    <!-- Nueva coleccion -->
+    <div class="newCollection">
+      <img src="IMG/coming_soon.svg" alt="Nueva colección de noche">
+      <button type="button" class="btn" id="btnPopup">Notificame</button>
+    </div>
+
+    <!-- ******************** -->
+     <!-- POP UP SUSCRIPCION -->
+
+     <div id="popup" class="popup">
+      <div class="popup-content">
+        <span id="closePopup">&times;</span>
+        <div class="popup-layout">
+          <div class="popup-gallery">
+            <img src="IMG/pop_up.svg" alt="Imagen formulario subscripción">
+          </div>
+          <div class="popup-formulario">
+            <h2>Enterate de todas nuestras NOVEDADES</h2>
+            <form>
+              <label for="email">Email</label>
+              <input type="email" id="email" placeholder="Ingresá tu email" required>
+              <button type="submit" class="btn">Suscribirme</button>
+              <p class="legal">
+                Ingresando tu email aceptás los <a href="#">Términos y condiciones</a> y las <a href="#">Políticas de privacidad</a>.  
+                Podés anular la suscripción en cualquier momento.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!-- ***************** -->
+
+  <!-- Banner envios -->
+  <div class="envios-banner">
+    <div class="envios-texto">
+      <span id="enviosSpan"></span>
+    </div>
+  </div>
+
+  <!-- Todos los productos -->
+
+    <!-- Titulo portada -->
+
+    <div class="portada">
+     <img src="IMG/portada.svg" alt="Todos los productos">
+    </div>
+
+    <!-- Listado  productos-->
+    <section class="content-section">
+      <div class="container-fluid">
+        <div class="row products" id="productos">
+          <!-- Productos de main.js -->
+        </div>
     
-    <!-- navbar -->
-    <header class="container-navbar"
+        <!-- Talles -->
+
+        <div id="tallaPopup" class="popup">
+         <div class="popup-content">
+          <span id="closeTallaPopup" class="close">&times;</span>
+          <h2>Selecciona tu talla</h2>
+          <div class="tallas">
+           <button class="talla-btn" data-talla="S">S</button>
+           <button class="talla-btn" data-talla="M">M</button>
+           <button class="talla-btn" data-talla="L">L</button>
+           <button class="talla-btn" data-talla="XL">XL</button>
+          </div>
+         </div>
+        </div>
+     </div>
+    </section>
+
+    <!-- Carrito -->
+     <aside id="carritoSidebar" class="carrito-sidebar">
+       <h2>Tu carrito</h2>
+       <div id="pedido-final"></div>
+     </aside>
+
+
+
+
+  </main>
+  
+  <footer class="footer">
+  <div class="container-footer">
+
+    <!-- Secciones de enlaces -->
+    <div class="footer-columns">
+
+      <div class="footer-column">
+        <h4>Información</h4>
+        <ul>
+          <li><a href="#">Nosotros</a></li>
+          <li><a href="#">Promociones</a></li>
+          <li><a href="#">Guía de Talles</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Mi cuenta</h4>
+        <ul>
+          <li><a href="#">Mis pedidos</a></li>
+          <li><a href="#">Ingresar</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Ayuda</h4>
+        <ul>
+          <li><a href="#">Cómo Comprar</a></li>
+          <li><a href="#">Preguntas Frecuentes</a></li>
+          <li><a href="#">Envíos</a></li>
+          <li><a href="#">Cambios y devoluciones</a></li>
+          <li><a href="#">Me Arrepentí</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Métodos de envío</h4>
+        <ul>
+          <li><a href="#">Correo Argentino</a></li>
+          <li><a href="#">Oca</a></li>
+          <li><a href="#">Vía Cargo</a></li>
+          <li><a href="#">Andreani</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Medios de pago</h4>
+        <ul>
+          <li><a href="#">Visa</a></li>
+          <li><a href="#">Mastercard</a></li>
+          <li><a href="#">Mercado Pago</a></li>
+          <li><a href="#">Pago Fácil</a></li>
+          <li><a href="#">American Express</a></li>
+          <li><a href="#">Cabal</a></li>
+          <li><a href="#">Naranja</a></li>
+          <li><a href="#">Transferencias</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Seguinos</h4>
+        <div class="social-icons">
+          <a href="#"><img src="img/facebook.svg" alt="Facebook"></a>
+          <a href="#"><img src="img/instagram.svg" alt="Instagram"></a>
+          <a href="#"><img src="img/whatsapp.svg" alt="WhatsApp"></a>
+          <a href="#"><img src="img/tiktok.svg" alt="Tiktok"></a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Derechos reservados -->
+    <div class="footer-bottom">
+      <p>Todos los derechos reservados.</p>
+    </div>
+
+  </div>
+ </footer>
+
+
+
+
+  <!-- Scripts -->
+  <script src="assets/jquery/jquery-3.5.1.min.js"></script>
+  <script src="JS/main.js"></script>
 </body>
 </html>
